@@ -1,9 +1,5 @@
 # Changelog
 
-## May 2026 — IN regional variant
-
-Forked from `data-governance` (US) for the **India data residency** (`mixpanel.com/in`). All commands, references, assets, and behaviour are identical; only the skill name, the MCP connector requirement, and the region tag in the menu header differ. Future changes to `data-governance` should be mirrored here.
-
 ## May 2026 — Refresh & DRY pass
 
 Refactor against the Mixpanel AI Plugins guidelines. No behavioural change for the user; substantial structural cleanup.

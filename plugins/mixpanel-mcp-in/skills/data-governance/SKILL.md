@@ -3,23 +3,20 @@ name: data-governance
 license: Apache-2.0
 description: >
   Audit, score, enrich, or clean up the Lexicon (events and properties metadata)
-  for a Mixpanel project on the India data residency (mixpanel.com/in). Use
-  whenever the user wants to score Lexicon health, bulk-fill missing
-  descriptions / display names / tags, reset metadata, triage data quality
-  issues (type drift, null values, volume anomalies), or rename and delete
-  tags on an IN project. Also use when the user describes the problem without
-  naming the tool — "event names are a mess", "half my events have no
-  descriptions", "tracking plan audit", "clean up the schema", "score our
-  instrumentation" — as long as Mixpanel IN is the context. Trigger phrases:
-  "score lexicon (IN)", "enrich lexicon IN", "audit my India project",
-  "review data quality issues IN", and the standard governor phrases when
-  the user is working on an IN project. Do NOT use for: US or EU projects
-  (use `data-governance` or `data-governance-eu`); deleting event data or
-  user profiles; dashboard cleanup; cohort tagging; customer health scoring.
-  Requires the Mixpanel IN MCP connector.
+  for a Mixpanel project. Use whenever the user wants to score Lexicon health,
+  bulk-fill missing descriptions / display names / tags, reset metadata, triage
+  data quality issues (type drift, null values, volume anomalies), or rename
+  and delete tags. Also use when the user describes the problem without naming
+  the tool — "event names are a mess", "half my events have no descriptions",
+  "tracking plan audit", "clean up the schema", "score our instrumentation" —
+  as long as Mixpanel is the context. Trigger phrases: "score lexicon",
+  "enrich lexicon", "bulk enrich", "auto-tag events", "reset lexicon",
+  "wipe tags", "review data quality issues", "rename/delete Lexicon tags".
+  Do NOT use for: deleting event data or user profiles; dashboard cleanup;
+  cohort tagging; customer health scoring. Requires Mixpanel MCP.
 ---
 
-# Mixpanel Data Governance (IN)
+# Mixpanel Data Governance
 
 > **Loading model:** Progressive. Only this file on entry. Command and reference files are read on-demand after routing — do not pre-load.
 
@@ -54,7 +51,7 @@ If a message matches more than one command — show the menu.
 1. Call `Get-Projects`. Match ID. If found → `✅ [Project Name] ([project_id])`, proceed.
 2. Not found → error, ask to re-enter or `list`.
 
-**MCP check:** `Get-Projects` fails with tool-not-found → tell user to connect the **Mixpanel IN MCP** connector (this skill targets the India data residency at `mixpanel.com/in`; the US connector will not see IN projects), stop.
+**MCP check:** `Get-Projects` fails with tool-not-found → tell user to connect Mixpanel MCP, stop.
 
 ---
 
@@ -64,7 +61,7 @@ Show only when no direct command was inferred:
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  Data Governance (IN) — [Project Name] ([project_id])
+  Data Governance — [Project Name] ([project_id])
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   1. Score Lexicon    — Health score (0–100), auto-offer bulk enrich
   2. Enrich & Tag     — Fill empty display names, descriptions & tags

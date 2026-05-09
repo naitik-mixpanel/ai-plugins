@@ -1,8 +1,6 @@
-# data-governance-in
+# data-governance
 
-Lexicon governance for Mixpanel projects on the **India data residency** (`mixpanel.com/in`). Audit metadata health, auto-enrich events and properties, categorize with tags, triage data quality issues, reset metadata, and manage existing tags — all through a menu-driven workflow that previews and confirms before writing.
-
-> Functionally identical to `data-governance` (US). Only the MCP connector and skill name differ. For US projects use `data-governance`; for EU use `data-governance-eu`.
+Lexicon governance for Mixpanel projects. Audit metadata health, auto-enrich events and properties, categorize with tags, triage data quality issues, reset metadata, and manage existing tags — all through a menu-driven workflow that previews and confirms before writing.
 
 ## Commands
 
@@ -70,7 +68,7 @@ assets/          — static payloads (e.g. canonical Run-Query JSON)
 
 ## Requirements
 
-- **Mixpanel IN MCP connector** installed and connected. The US connector will not see IN projects.
+- Mixpanel MCP connected.
 - Working directory writable (for the per-run audit log).
 
 ## Changelog
